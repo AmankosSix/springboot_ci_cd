@@ -1,14 +1,21 @@
-# Use the official OpenJDK base image with Java 21
-FROM amazoncorretto:21-alpine
+# Stage 1: Build the application
+FROM amazoncorretto:21-alpine AS builder
 
-# Set the working directory in the container
 WORKDIR /app
 
-# Copy the dependencies file to the working directory
-COPY target/springboot_ci_cd-0.0.1-SNAPSHOT.jar /app/app.jar
+COPY . .
 
-# Expose the port that your Spring Boot application will run on
+RUN ./mvnw clean install -DskipTests
+
+# Stage 2: Create the final image
+FROM amazoncorretto:21-alpine
+
+WORKDIR /app
+
+COPY --from=builder /app/target/springboot_ci_cd-0.0.1-SNAPSHOT.jar /app/app.jar
+
 EXPOSE 8080
 
-# Run the JAR file
+HEALTHCHECK CMD wget --quiet --tries=1 --spider http://localhost:8080/actuator/health || exit 1
+
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
