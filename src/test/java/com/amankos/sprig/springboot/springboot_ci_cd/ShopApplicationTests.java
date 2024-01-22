@@ -1,4 +1,4 @@
-package com.amankos.sprig.springboot.shop;
+package com.amankos.sprig.springboot.springboot_ci_cd;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

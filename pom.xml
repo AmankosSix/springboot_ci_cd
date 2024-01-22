@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.amankos.sprig.springboot</groupId>
-    <artifactId>springboot-ci-cd</artifactId>
+    <artifactId>springboot_ci_cd</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springboot-ci-cd</name>
-    <description>springboot-ci-cd</description>
+    <name>springboot_ci_cd</name>
+    <description>springboot_ci_cd</description>
     <properties>
         <java.version>21</java.version>
     </properties>

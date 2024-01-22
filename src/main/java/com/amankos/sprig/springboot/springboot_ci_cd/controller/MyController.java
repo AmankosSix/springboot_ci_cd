@@ -1,4 +1,4 @@
-package com.amankos.sprig.springboot.shop.controller;
+package com.amankos.sprig.springboot.springboot_ci_cd.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,13 +1,13 @@
-package com.amankos.sprig.springboot.shop;
+package com.amankos.sprig.springboot.springboot_ci_cd;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ShopApplication {
+public class SpringbootCiCdApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ShopApplication.class, args);
+        SpringApplication.run(SpringbootCiCdApplication.class, args);
     }
 
 }

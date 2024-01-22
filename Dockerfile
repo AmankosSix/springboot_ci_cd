@@ -5,10 +5,10 @@ FROM amazoncorretto:21-alpine
 WORKDIR /app
 
 # Copy the dependencies file to the working directory
-COPY target/shop-0.0.1-SNAPSHOT.jar /app
+COPY target/springboot_ci_cd-0.0.1-SNAPSHOT.jar /app
 
 # Expose the port that your Spring Boot application will run on
 EXPOSE 8080
 
 # Run the JAR file
-ENTRYPOINT ["java", "-jar", "shop-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "springboot_ci_cd-0.0.1-SNAPSHOT.jar"]
