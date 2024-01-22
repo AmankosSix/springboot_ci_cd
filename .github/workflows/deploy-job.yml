@@ -38,6 +38,6 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v3
       - name: Build Docker image
-        run: docker build -t springboot_ci_cd:latest .
+        run: docker build -t springboot_ci_cd .
       - name: Deploy Docker container
         run: docker run -d -p 80:80 springboot_ci_cd:latest
