@@ -23,10 +23,13 @@ jobs:
     runs-on: self-hosted
     needs: test
     steps:
-      - name: Stop and remove containers, networks
-        run: docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)
-      - name: Remove unused data
-        run: docker system prune -a -f
+      - name: Stop and remove Docker containers
+        run: |
+          if [ "$(docker ps -aq)" ]; then
+            docker stop $(docker ps -aq) && docker rm $(docker ps -aq)
+          else
+            echo "No Docker containers to stop or remove."
+          fi
 
   deploy:
     runs-on: self-hosted
